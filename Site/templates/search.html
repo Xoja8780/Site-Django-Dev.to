@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Dev Search
+{% endblock %}
+
+{% block content %}
+
+<section class="hero-section">
+
+    <div class="container">
+
+        <!-- Hero -->
+        <div class="hero-content text-center">
+            <h1 class="hero-title">
+                Поиск статей с <span style="color: #ff007a;">DEV.TO</span>
+            </h1>
+            <p class="hero-subtitle">
+                Находите лучшие статьи по программированию,
+                backend-разработке и технологиям
+            </p>
+        </div>
+
+        <!-- Search form -->
+        <div class="search-wrapper">
+            <form method="get" class="search-form">
+                <div class="search-box">
+                    <i class="bi bi-search search-icon"></i>
+                    <input
+                        type="text"
+                        name="q"
+                        class="form-control custom-search-input"
+                        placeholder="Введите запрос (django, python, api...)"
+                        value="{{ query }}"
+                    >
+                    <button type="submit" class="btn search-btn">Искать</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Tags -->
+        <div class="popular-tags text-center">
+            <span class="tag-label">🔥 Популярные:</span>
+            <span class="tag-item">python</span>
+            <span class="tag-item">javascript</span>
+            <span class="tag-item">django</span>
+            <span class="tag-item">api</span>
+            <span class="tag-item">react</span>
+            <span class="tag-item">docker</span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Results -->
+<section class="results-section">
+
+    <div class="container">
+
+        {% if query %}
+        <div class="results-header">
+            <h2>
+                Результаты поиска: <span class="query-text">{{ query }}</span>
+            </h2>
+            <span class="results-count">Найдено статей: <strong>{{ articles|length }}</strong></span>
+        </div>
+        {% endif %}
+
+        {% for article in articles %}
+
+        <div class="article-card">
+
+            <!-- Колонка 1: Обложка -->
+            {% if article.cover_image %}
+            <img src="{{ article.cover_image }}" class="article-cover" alt="{{ article.title }}">
+            {% else %}
+            <div class="article-cover article-cover-placeholder"></div>
+            {% endif %}
+
+            <!-- Колонка 2: Текст -->
+            <div class="article-content">
+                <h3 class="article-title">{{ article.title }}</h3>
+                <p class="article-description">{{ article.description }}</p>
+                <div class="article-tags">
+                    {% for tag in article.tag_list %}
+                    <span class="tag-item">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Колонка 3: Автор + дата + кнопка -->
+            <div class="article-author">
+                <img src="{{ article.user.profile_image_90 }}" class="author-avatar" alt="{{ article.user.name }}">
+                <div class="author-info">
+                    <span class="author-name">{{ article.user.name }}</span>
+                    <span class="author-username">@{{ article.user.username }}</span>
+                </div>
+                <div class="article-meta">
+                    <span><i class="bi bi-calendar3"></i> {{ article.readable_publish_date }}</span>
+                    <span><i class="bi bi-clock"></i> {{ article.reading_time_minutes }} мин чтения</span>
+                </div>
+                <a href="{{ article.url }}" target="_blank" class="btn article-btn">Читать ↗</a>
+            </div>
+
+        </div>
+
+        {% empty %}
+            {% if query %}
+            <div class="empty-results text-center">
+                <h3>Ничего не найдено по запросу «{{ query }}»</h3>
+            </div>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
