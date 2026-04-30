@@ -6,7 +6,9 @@
 ![Django](https://img.shields.io/badge/Django-6.0-green)
 
 ## 📸 Превью
-<!-- ![img.png](img.png) -->
+<img width="1920" height="984" alt="image" src="https://github.com/user-attachments/assets/cad43de7-b14f-44c8-8d84-32e38f788788" />
+
+
 
 ## ⚡ Стек
 - Python 3.12
@@ -18,7 +20,7 @@
 
 1. Клонируй репозиторий
 \`\`\`bash
-git clone https://github.com/твой_username/Dev.to-Site
+git clone https://github.com/Xoja8780/Dev.to-Site
 cd Dev.to-Site
 \`\`\`
 
