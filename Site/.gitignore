@@ -65,7 +65,7 @@ Thumbs.db
 # Личные заметки
 *.txt
 !requirements.txt
-
+Путь файла.txt
 # IDE
 .pycharm/
 .idea/
