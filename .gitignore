@@ -1,0 +1,71 @@
+# =========================
+# 🐍 Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Packaging / build
+.Python
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# =========================
+# 🌐 Django
+# =========================
+db.sqlite3
+*.sqlite3
+/media/
+/staticfiles/
+
+# =========================
+# 🧪 Virtual Environment
+# =========================
+venv/
+env/
+ENV/
+
+# =========================
+# 🔐 Environment variables
+# =========================
+.env
+.env.local
+
+# =========================
+# 💻 IDE / Editor
+# =========================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# =========================
+# 🖥️ OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# Секреты
+.env
+
+# Личные заметки
+*.txt
+!requirements.txt
+Путь файла.txt
+# IDE
+.pycharm/
+.idea/
