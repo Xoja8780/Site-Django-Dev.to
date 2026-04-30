@@ -100,7 +100,11 @@ Dev Search
                     <span><i class="bi bi-calendar3"></i> {{ article.readable_publish_date }}</span>
                     <span><i class="bi bi-clock"></i> {{ article.reading_time_minutes }} мин чтения</span>
                 </div>
-                <a href="{{ article.url }}" target="_blank" class="btn article-btn">Читать ↗</a>
+                <a href="{{ article.url }}" target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn article-btn">
+                    Читать ↗
+                </a>
             </div>
 
         </div>
