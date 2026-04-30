@@ -42,4 +42,4 @@ python manage.py runserver
 \`\`\`
 
 ## 👨‍💻 Автор
-**Xoja** — [@твой_github](https://github.com/твой_username)
+**Xoja** — [@Xoja8780](https://github.com/Xoja8780)
