@@ -27,11 +27,11 @@ Dev Search
                 <div class="search-box">
                     <i class="bi bi-search search-icon"></i>
                     <input
-                        type="text"
-                        name="q"
-                        class="form-control custom-search-input"
-                        placeholder="Введите запрос (django, python, api...)"
-                        value="{{ query }}"
+                            type="text"
+                            name="q"
+                            class="form-control custom-search-input"
+                            placeholder="Введите запрос (django, python, api...)"
+                            value="{{ query }}"
                     >
                     <button type="submit" class="btn search-btn">Искать</button>
                 </div>
@@ -41,12 +41,12 @@ Dev Search
         <!-- Tags -->
         <div class="popular-tags text-center">
             <span class="tag-label">🔥 Популярные:</span>
-            <span class="tag-item">python</span>
-            <span class="tag-item">javascript</span>
-            <span class="tag-item">django</span>
-            <span class="tag-item">api</span>
-            <span class="tag-item">react</span>
-            <span class="tag-item">docker</span>
+            <a href="?q=python" class="tag-item">python</a>
+            <a href="?q=javascript" class="tag-item">javascript</a>
+            <a href="?q=django" class="tag-item">django</a>
+            <a href="?q=api" class="tag-item">api</a>
+            <a href="?q=react" class="tag-item">react</a>
+            <a href="?q=docker" class="tag-item">docker</a>
         </div>
 
     </div>
@@ -106,11 +106,11 @@ Dev Search
         </div>
 
         {% empty %}
-            {% if query %}
-            <div class="empty-results text-center">
-                <h3>Ничего не найдено по запросу «{{ query }}»</h3>
-            </div>
-            {% endif %}
+        {% if query %}
+        <div class="empty-results text-center">
+            <h3>Ничего не найдено по запросу «{{ query }}»</h3>
+        </div>
+        {% endif %}
         {% endfor %}
 
     </div>
